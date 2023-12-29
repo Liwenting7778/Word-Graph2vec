@@ -1,0 +1,23 @@
+#!/bin/bash
+cd $(dirname $(realpath $0))
+cd ../
+
+set -v
+
+# run with PreComp mode (default)
+pecanpy --input demo/karate.edg --output demo/karate.emb --verbose
+
+# run with SparseOTF mode
+pecanpy --input demo/karate.edg --output demo/karate.emb --verbose --mode SparseOTF
+
+# run with DenseOTF mode
+pecanpy --input demo/karate.edg --output demo/karate.emb --verbose --mode DenseOTF
+
+# convert and save edgelist as dense matrix
+pecanpy --input demo/karate.edg --output demo/karate.npz --task todense
+
+# run with DenseOTF mode using dense array as input
+pecanpy --input demo/karate.npz --output demo/karate.emb --verbose --mode DenseOTF
+
+# input parameters
+pecanpy --help
