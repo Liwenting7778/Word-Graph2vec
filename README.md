@@ -22,11 +22,11 @@ The code takes files with file extension of **.edge**. Note that all training  f
 
 Training the model is handled by the `src/cli.py` script which provides the following command line arguments
 # Input and output options
-'''
+```
   --input            STR   Sequence files directory.   Default is `dataset/input/`.
   --output           STR   embedding path.             Default is `dataset/input/embeddings.txt`.
   --edge-list-file   STR   Edge file path.             Default is `dataset/input/edge-list-file.edge`.
-'''
+```
 
 # Random walk options
 '''
